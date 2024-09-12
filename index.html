@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tip Calculator App</title>
+    <link rel="icon" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="./reset.css" />
+  </head>
+  <body>
+    <header>
+      <img src="./images/logo.svg" alt="logo" />
+    </header>
+    <main>
+      <div class="user-side">
+        <div class="bill-container">
+          <h3 class="bill-text">Bill</h3>
+          <input id="bill" type="number" placeholder="0" required/>
+        </div>
+        <h3>Select Tip %</h3>
+          <div class="choose">
+            <button class="percentage"><p>5%</p></button>
+            <button class="percentage"><p>10%</p></button>
+            <button class="percentage"><p>15%</p></button>
+            <button class="percentage"><p>25%</p></button>
+            <button class="percentage"><p>50%</p></button>
+            <input class="percentage custom" type="number" placeholder="Custom" required></input>
+          </div>
+          <div class="people-container">
+            <h3 class="people-amount-text">Number of People</h3>
+            <p id="error-message"></p>
+            <input id="people-amount" type="number" placeholder="0" required/>
+          </div>
+        </div>
+        <div class="result">
+          <div class="tip-result">
+            <h5 class="final-result first">Tip Amount <br> <span>/ person</span></h3>
+            <h4 id="final-tip">$0.00</h4>
+          </div>
+          <div class="total-result">
+            <h5 class="final-result second">Total <br><span>/ person</span></h3>
+            <h4 id="final-total">$0.00</h4>
+          </div>
+          <button id="reset"><p>RESET</p</button>
+        </div>
+      </div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
