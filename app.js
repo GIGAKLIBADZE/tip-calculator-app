@@ -70,7 +70,7 @@ function calculation() {
   const resultTipValue = (billAmount * (percentageValue / 100)) / peopleAmount;
   const resultTotalValue = billAmount / peopleAmount + resultTipValue;
 
-  if (peopleValue !== 0 && peopleValue) {
+  if (peopleAmount !== 0 && peopleAmount) {
     resultTip.textContent = `$${resultTipValue.toFixed(2)}`;
     resultTotal.textContent = `$${resultTotalValue.toFixed(2)}`;
   }

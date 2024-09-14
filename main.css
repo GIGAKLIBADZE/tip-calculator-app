@@ -235,11 +235,11 @@ main {
 }
 
 #error-message {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   color: #e17457;
   display: inline-block;
-  margin-left: 86px;
+  margin-left: 28px;
 }
 
 @media (min-width: 1440px) {
@@ -294,6 +294,18 @@ main {
 
   .total-result {
     margin-top: 30px;
+  }
+
+  .people-amount-text {
+    display: inline-block;
+  }
+
+  #error-message {
+    font-size: 16px;
+    font-weight: bold;
+    color: #e17457;
+    display: inline-block;
+    margin-left: 86px;
   }
 
   #bill:hover {
