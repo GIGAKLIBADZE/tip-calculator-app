@@ -7,24 +7,9 @@ const resetAll = document.getElementById("reset");
 const customInput = [...document.getElementsByClassName("custom")];
 const errorMessage = document.getElementById("error-message");
 
-let billValue;
-let percentageValue;
-let peopleValue;
-
-function calculation() {
-  const billAmount = parseFloat(billValue);
-  const peopleAmount = parseFloat(peopleValue);
-
-  if (!billAmount || !percentageValue || !peopleAmount) {
-    return;
-  }
-
-  const resultTipValue = (billAmount * (percentageValue / 100)) / peopleAmount;
-  const resultTotalValue = billAmount / peopleAmount + resultTipValue;
-
-  resultTip.textContent = `$${resultTipValue.toFixed(2)}`;
-  resultTotal.textContent = `$${resultTotalValue.toFixed(2)}`;
-}
+let billValue = 0;
+let percentageValue = 0;
+let peopleValue = 0;
 
 billInput.addEventListener("input", (event) => {
   billValue = parseFloat(event.target.value);
@@ -79,20 +64,17 @@ peopleInput.addEventListener("input", (event) => {
   calculation();
 });
 
-// function calculation() {
-//   const billAmount = parseFloat(billValue);
-//   const peopleAmount = parseFloat(peopleValue);
+function calculation() {
+  const billAmount = parseFloat(billValue);
+  const peopleAmount = parseFloat(peopleValue);
+  const resultTipValue = (billAmount * (percentageValue / 100)) / peopleAmount;
+  const resultTotalValue = billAmount / peopleAmount + resultTipValue;
 
-//   if (!billAmount || !percentageValue || !peopleAmount) {
-//     return;
-//   }
-
-//   const resultTipValue = (billAmount * (percentageValue / 100)) / peopleAmount;
-//   const resultTotalValue = billAmount / peopleAmount + resultTipValue;
-
-//   resultTip.textContent = `$${resultTipValue.toFixed(2)}`;
-//   resultTotal.textContent = `$${resultTotalValue.toFixed(2)}`;
-// }
+  if (peopleAmount !== 0 && peopleAmount) {
+    resultTip.textContent = `$${resultTipValue.toFixed(2)}`;
+    resultTotal.textContent = `$${resultTotalValue.toFixed(2)}`;
+  }
+}
 
 resetAll.addEventListener("click", (event) => {
   billInput.value = "";
