@@ -11,6 +11,21 @@ let billValue;
 let percentageValue;
 let peopleValue;
 
+function calculation() {
+  const billAmount = parseFloat(billValue);
+  const peopleAmount = parseFloat(peopleValue);
+
+  if (!billAmount || !percentageValue || !peopleAmount) {
+    return;
+  }
+
+  const resultTipValue = (billAmount * (percentageValue / 100)) / peopleAmount;
+  const resultTotalValue = billAmount / peopleAmount + resultTipValue;
+
+  resultTip.textContent = `$${resultTipValue.toFixed(2)}`;
+  resultTotal.textContent = `$${resultTotalValue.toFixed(2)}`;
+}
+
 billInput.addEventListener("input", (event) => {
   billValue = parseFloat(event.target.value);
 
@@ -64,20 +79,20 @@ peopleInput.addEventListener("input", (event) => {
   calculation();
 });
 
-function calculation() {
-  const billAmount = parseFloat(billValue);
-  const peopleAmount = parseFloat(peopleValue);
+// function calculation() {
+//   const billAmount = parseFloat(billValue);
+//   const peopleAmount = parseFloat(peopleValue);
 
-  if (!billAmount || !percentageValue || !peopleAmount) {
-    return;
-  }
+//   if (!billAmount || !percentageValue || !peopleAmount) {
+//     return;
+//   }
 
-  const resultTipValue = (billAmount * (percentageValue / 100)) / peopleAmount;
-  const resultTotalValue = billAmount / peopleAmount + resultTipValue;
+//   const resultTipValue = (billAmount * (percentageValue / 100)) / peopleAmount;
+//   const resultTotalValue = billAmount / peopleAmount + resultTipValue;
 
-  resultTip.textContent = `$${resultTipValue.toFixed(2)}`;
-  resultTotal.textContent = `$${resultTotalValue.toFixed(2)}`;
-}
+//   resultTip.textContent = `$${resultTipValue.toFixed(2)}`;
+//   resultTotal.textContent = `$${resultTotalValue.toFixed(2)}`;
+// }
 
 resetAll.addEventListener("click", (event) => {
   billInput.value = "";
